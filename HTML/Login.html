@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../CSS/login.css" />
+    <script src="../JS/resetAll.js" defer></script>
+    <script src="../JS/login.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Login Page</h3>
+      <img src="../assets/BalesPharma.jpg" width="60%" alt="company logo" />
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          placeholder="username"
+          name="username"
+          required
+        />
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="password"
+          name="password"
+          required
+        />
+        <button type="button" onclick="signIn()">Login</button>
+      </form>
+      <p>Don't have an account? <a href="Registration.html">Register</a></p>
+      <p>
+        Forget your password?
+        <button type="button" onclick="resetAll()">Reset All</button>
+      </p>
+    </div>
+    <div class="footer">
+      <h4>Unlock Your Potential: Crafting Your Future Here!</h4>
+    </div>
+  </body>
+</html>

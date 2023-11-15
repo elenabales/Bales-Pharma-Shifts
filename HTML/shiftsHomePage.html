@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/shiftsHomePage.css" />
+    <link rel="stylesheet" href="../CSS/shiftsHomePage.css" />
+
+    <script src="../JS/logout.js" defer></script>
+    <script src="../JS/EditShiftModal.js" defer></script>
+    <script src="../JS/addShiftModal.js" defer></script>
+    <script src="../JS/delete.js" defer></script>
+    <script src="../JS/editProfile.js" defer></script>
+    <script src="../JS/userName.js" defer></script>
+    <script src="../JS/progressbar.js" defer></script>
+    <script src="../JS/delete.js" defer></script>
+    <script src="../JS/logout.js" defer></script>
+    <script src="../JS/searchForShiftsAndDisplay.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="../assets/BalesPharma.jpg"
+          alt="Company Logo"
+          height="120rem"
+          width="24%"
+        />
+      </div>
+    </header>
+
+    <div id="navbar">
+      <a href="#"> <b> SHIFT BUILDER </b></a>
+      <a href="./shiftsHomePage.html">My Shifts</a>
+      <a href="./editProfile.html">Edit Profile</a>
+      <a href="#" id="add-shift-button">Add Shift</a>
+      <span class="username"><span id="username">JD</span></span>
+      <button id="logout-button">Logout</button>
+    </div>
+
+    <div id="search-options">
+      <label for="shift-input">Search Shift:</label>
+      <input type="text" id="shift-input" />
+      <label for="from-date-input">From Date:</label>
+      <input type="date" id="from-date-input" />
+      <label for="to-date-input">To Date:</label>
+      <input type="date" id="to-date-input" />
+      <button id="search-button">Search</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Hourly Wage</th>
+          <th>Work Place</th>
+          <th>Profit</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="shiftTableBody"></tbody>
+    </table>
+
+    <table>
+      <tfoot>
+        <tr>
+          <td>Best Month 💰</td>
+          <td id="bestMonthName" colspan="5"></td>
+          <td>Total Profit= <span id="bestMonthProfit"></span></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <div id="shiftModal">
+      <div id="shiftModalContent">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Add Shift</h2>
+        <form id="addShiftForm">
+          <label for="shiftDate">Shift Date:</label>
+          <input type="date" id="shiftDate" name="shiftDate" required /><br />
+
+          <label for="startTime">Starting Time:</label>
+          <input type="time" id="startTime" name="startTime" required /><br />
+
+          <label for="endTime">Ending Time:</label>
+          <input type="time" id="endTime" name="endTime" required /><br />
+
+          <label for="hourlyWage">Hourly Wage:</label>
+          <input
+            type="number"
+            id="hourlyWage"
+            name="hourlyWage"
+            required
+          /><br />
+
+          <label for="workplace">Workplace:</label>
+          <select id="workplace" name="workplace">
+            <option value="" disabled selected>Select workplace</option>
+            <option value="Pharmacy 1">Pharmacy 1</option>
+            <option value="Pharmacy 2">Pharmacy 2</option>
+            <option value="Pharmacy 3">Pharmacy 3</option></select
+          ><br />
+
+          <label for="shiftName">Shift Name:</label>
+          <input type="text" id="shiftName" name="shiftName" required /><br />
+
+          <label for="comments">Comments:</label>
+          <textarea id="comments" name="comments" rows="4"></textarea><br />
+
+          <button type="button" id="addShiftButton">Add Shift</button>
+          <div class="progress-container" id="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Edit Shift Modal -->
+    <div id="editShiftModal">
+      <div id="editShiftModalContent">
+        <span class="close" id="closeEditModal">&times;</span>
+        <h2>Edit Shift</h2>
+        <form id="editShiftForm">
+          <label for="editShiftDate">Shift Date:</label>
+          <input
+            type="date"
+            id="editShiftDate"
+            name="editShiftDate"
+            required
+          /><br />
+
+          <label for="editStartTime">Starting Time:</label>
+          <input
+            type="time"
+            id="editStartTime"
+            name="editStartTime"
+            required
+          /><br />
+
+          <label for="editEndTime">Ending Time:</label>
+          <input
+            type="time"
+            id="editEndTime"
+            name="editEndTime"
+            required
+          /><br />
+
+          <label for="editHourlyWage">Hourly Wage:</label>
+          <input
+            type="number"
+            id="editHourlyWage"
+            name="editHourlyWage"
+            required
+          /><br />
+
+          <label for="editWorkplace">Workplace:</label>
+          <select id="editWorkplace" name="editWorkplace">
+            <option value="" disabled>Select workplace</option>
+            <option value="Pharmacy 1">Pharmacy 1</option>
+            <option value="Pharmacy 2">Pharmacy 2</option>
+            <option value="Pharmacy 3">Pharmacy 3</option></select
+          ><br />
+
+          <label for="editShiftName">Shift Name:</label>
+          <input
+            type="text"
+            id="editShiftName"
+            name="editShiftName"
+            required
+          /><br />
+
+          <label for="editComments">Comments:</label>
+          <textarea id="editComments" name="editComments" rows="4"></textarea
+          ><br />
+
+          <button type="button" id="saveEditButton">Save Changes</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <div id="footer-menu">
+        <ul>
+          <!-- <li><a href="#">Home</a></li> -->
+          <!-- <li><a href="./aboutUs.html">About Us</a></li> -->
+          <!-- <li><a href="#">Contact us</a></li> -->
+          <li>&copy;2023 All Rights Reserved, Bales Design Inc🍀</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

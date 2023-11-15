@@ -1,0 +1,260 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.logo {
+  padding-top: 6px;
+  text-align: center;
+  background-color: rgb(65, 196, 63);
+}
+img {
+  border: 1px solid rgb(60, 226, 107);
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+}
+
+#navbar {
+  background-color: #333;
+  overflow: hidden;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar .username {
+  float: right;
+  padding: 14px 16px;
+  color: #12f11a;
+}
+
+#logout-button {
+  float: right;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 14px 16px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 1.2px;
+}
+
+#logout-button:hover {
+  background-color: #d32f2f;
+}
+#search-options {
+  padding: 30px 10%;
+}
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 20px auto;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#shiftModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.progress-container {
+  display: none;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.progress-bar {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid #ccc;
+  border-top: 10px solid #f2340a;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#addShiftButton,
+#saveEditButton {
+  background-color: #007bff;
+  border-radius: 3px;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#editShiftModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 3;
+  top: 3;
+  margin: 0% auto;
+  width: 30%;
+  overflow: auto;
+  background-color: #fefefe;
+}
+
+#shiftModalContent {
+  background-color: #fefefe;
+  margin: 0% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 45%;
+}
+#editShiftModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 10;
+  overflow: auto;
+  background-color: #fefefe;
+  margin: 30% auto;
+  padding: 32px 33px;
+  border: 1px solid #888;
+  width: 45%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+#footer-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+#footer-menu li {
+  display: inline;
+  margin-right: 20px;
+}
+#footer-menu a {
+  text-decoration: none;
+  color: #fff;
+}
+#footer-menu a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .logo img {
+    height: auto;
+    width: 50%;
+  }
+
+  #navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+  #username {
+    display: none;
+  }
+  #logout-button {
+    margin: 5px;
+  }
+  table {
+    font-size: 14px;
+  }
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .logo img {
+    width: 100%;
+  }
+
+  #navbar {
+    width: 100%;
+    text-align: center;
+  }
+
+  #navbar a {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    text-align: center;
+  }
+
+  #username {
+    display: none;
+  }
+
+  #logout-button {
+    margin-right: 5px;
+  }
+}
